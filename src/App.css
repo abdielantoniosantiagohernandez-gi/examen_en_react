@@ -5,15 +5,15 @@
 
 :root {
   /* Paleta Pastel en Modo Oscuro */
-  --bg-deep: #1A1A24;
+  --bg-deep: #6a6ac9;
   --surface-dark: #262635;
-  --tulip-pink: #FFB7B2;
+  --tulip-pink: #378548;
   --tulip-peach: #FFDAC1;
   --leaf-mint: #B5EAD7;
   --text-light: #F4F4F8;
   --text-muted: #8E8E9F;
-  --border-glow: rgba(255, 183, 178, 0.25);
-  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --border-glow: rgba(78, 14, 9, 0.25);
+  --shadow-dark: rgba(139, 57, 57, 0.4);
 }
 
 body {

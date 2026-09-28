@@ -1,0 +1,235 @@
+/* 
+  TO-DO LIST DE TULIPANES - DARK MODE PASTEL
+  Iconografía vectorial de flores, sin emojis y animaciones fluidas.
+*/
+
+:root {
+  /* Paleta Pastel en Modo Oscuro */
+  --bg-deep: #1A1A24;
+  --surface-dark: #262635;
+  --tulip-pink: #FFB7B2;
+  --tulip-peach: #FFDAC1;
+  --leaf-mint: #B5EAD7;
+  --text-light: #F4F4F8;
+  --text-muted: #8E8E9F;
+  --border-glow: rgba(255, 183, 178, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: radial-gradient(circle at top right, #2c293b, var(--bg-deep));
+  margin: 0;
+  color: var(--text-light);
+  font-family: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal estilo cristal oscuro */
+.app-container {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(38, 38, 53, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 30px;
+  padding: 35px;
+  border: 1px solid rgba(255, 183, 178, 0.15);
+  box-shadow: 0 20px 50px var(--shadow-dark), inset 0 0 0 2px var(--border-glow);
+  transition: transform 0.4s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-4px);
+}
+
+/* Cabecera */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  font-size: 26px;
+  margin: 0;
+  color: var(--text-light);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 183, 178, 0.3);
+}
+
+/* Icono principal de la cabecera (Tulipán en SVG) */
+.header-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--surface-dark);
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 15px var(--shadow-dark);
+  color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFB7B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22v-8'/%3E%3Cpath d='M12 14c-4 0-6-3-6-8 0 0 2 2 6 2 4 0 6-2 6-2 0 5-2 8-6 8z'/%3E%3Cpath d='M12 14c-2 0-3-3-3-6 0 0 1 1 3 1 2 0 3-1 3-1 0 3-1 6-3 6z'/%3E%3C/svg%3E");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: gentleSway 4s ease-in-out infinite;
+}
+
+@keyframes gentleSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Inputs y Búsqueda */
+.task-input { display: flex; gap: 15px; margin-bottom: 25px; }
+
+.input-field, .search-field {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid #3A3A4A;
+  color: var(--text-light);
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 15px;
+}
+
+.input-field:focus, .search-bar:focus-within {
+  border-color: var(--tulip-pink);
+  box-shadow: 0 0 15px rgba(255, 183, 178, 0.15);
+}
+
+.input-field::placeholder { color: var(--text-muted); }
+
+/* Botón Agregar (Tulipán minimalista) */
+.paw-button {
+  width: 55px; height: 55px;
+  border: none;
+  background-color: var(--tulip-pink);
+  border-radius: 18px;
+  cursor: pointer;
+  color: transparent; 
+  box-shadow: 0 5px 15px rgba(255, 183, 178, 0.3);
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A24' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  background-size: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.paw-button:hover {
+  background-color: var(--tulip-peach);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Toolbar y Filtros */
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 15px; flex-wrap: wrap; }
+.filter-buttons { display: flex; gap: 8px; }
+
+.fish-button {
+  border: 1px solid #3A3A4A;
+  background: var(--surface-dark);
+  border-radius: 15px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: transparent; /* Oculta el texto original de React */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Reemplazo de texto para filtros */
+.fish-button:nth-child(1)::after { content: 'Estudio'; color: var(--text-muted); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: color 0.3s; }
+.fish-button:nth-child(2)::after { content: 'Trabajo'; color: var(--text-muted); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: color 0.3s; }
+.fish-button:nth-child(3)::after { content: 'Personal'; color: var(--text-muted); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: color 0.3s; }
+
+.fish-button.active {
+  background: var(--tulip-peach);
+  border-color: var(--tulip-peach);
+}
+.fish-button.active::after { color: var(--bg-deep); }
+
+/* Buscador sin orejitas */
+.search-bar {
+  display: flex; align-items: center; gap: 8px;
+  border: 2px solid #3A3A4A; border-radius: 20px;
+  padding: 6px 15px; background: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.ear-icon { display: none; }
+.search-field {
+  border: none; background: transparent; color: var(--text-light); width: 120px;
+}
+
+/* Lista de Tareas */
+.task-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.task-item {
+  display: flex; align-items: center; gap: 15px;
+  background: var(--surface-dark);
+  border-radius: 18px; padding: 16px 20px;
+  border: 1px solid #3A3A4A;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover { border-color: var(--tulip-pink); }
+.task-text { flex: 1; font-size: 15px; color: var(--text-light); transition: color 0.3s; }
+
+/* Tarea Completada */
+.task-item.completed { border-color: var(--leaf-mint); background: rgba(181, 234, 215, 0.05); }
+.task-item.completed .task-text { text-decoration: line-through; color: var(--text-muted); }
+
+/* Etiquetas de Estado usando CSS Content */
+.status-tag {
+  font-size: 11px; padding: 6px 12px; border-radius: 12px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  color: transparent; position: relative; min-width: 80px; height: 14px;
+}
+.tag-pending { background: rgba(255, 255, 255, 0.05); border: 1px solid #3A3A4A; }
+.tag-pending::after { content: 'INCOMPLETO'; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--text-muted); }
+
+.tag-done { background: rgba(181, 234, 215, 0.15); border: 1px solid var(--leaf-mint); }
+.tag-done::after { content: 'COMPLETADO'; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--leaf-mint); }
+
+/* Checkbox Interactivo (Brote -> Tulipán) */
+.paw-print {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2px solid var(--text-muted);
+  background-color: transparent; cursor: pointer; color: transparent;
+  transition: all 0.3s ease;
+}
+
+.task-item.completed .paw-print {
+  background-color: var(--leaf-mint); border-color: var(--leaf-mint);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A1A24' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-size: 60%; background-position: center; background-repeat: no-repeat;
+}
+
+/* Botón Eliminar (X sutil) */
+.delete-cat {
+  width: 32px; height: 32px; border: none; border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05); cursor: pointer; color: transparent;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238E8E9F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
+  background-size: 50%; background-position: center; background-repeat: no-repeat;
+}
+
+.delete-cat:hover {
+  background-color: rgba(255, 183, 178, 0.15);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFB7B2' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
+  transform: scale(1.1);
+}
